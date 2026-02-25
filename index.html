@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Jyotish AI - Celestial Wisdom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sacred-cream: #FCFBF7;
+            --vedic-gold: #A27E1D;
+            --slate-text: #1E293B;
+            --soft-amber: #FFFBEB;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--sacred-cream);
+            color: var(--slate-text);
+            overflow-x: hidden;
+        }
+        .font-cinzel-dec {
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        /* Light Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(162, 126, 29, 0.15);
+            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04);
+        }
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(162, 126, 29, 0.4);
+            box-shadow: 0 0 15px rgba(162, 126, 29, 0.05);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        @keyframes dust-float {
+            0%, 100% { opacity: 0.1; transform: translateY(0); }
+            50% { opacity: 0.4; transform: translateY(-10px); }
+        }
+        .star {
+            position: absolute;
+            background: #D4AF37;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: dust-float var(--duration) infinite ease-in-out;
+        }
+        .bg-aura {
+            background: radial-gradient(circle at 50% 0%, #FFFBEB 0%, #FCFBF7 70%);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-aura">
+    <div id="root"></div>
+    <script>
+        const root = document.body;
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.width = `${Math.random() * 3 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.setProperty('--duration', `${Math.random() * 5 + 4}s`);
+            root.appendChild(star);
+        }
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

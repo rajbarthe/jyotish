@@ -1,0 +1,7 @@
+{
+  "name": "JyotishAI - Vedic Kundali & Astrological Guide",
+  "description": "A sophisticated Vedic Astrology platform to generate Kundalis and consult with an AI Astrologer powered by Gemini.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
